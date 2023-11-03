@@ -129,15 +129,22 @@ table {
 }
 /** end reset css**/
 body {
-    max-width: 1140px;
+    max-width: 1440px;
     margin: auto;
     font-family: "Work Sans";
     font-size: 14px;
+    background: #fffef8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
 }
 header {
     display: flex;
     justify-content: space-between;
-    margin: 50px 0;
+    margin: 50px 150px;
 }
 section {
     margin: 50px 0;
@@ -173,6 +180,20 @@ nav li {
     padding: 0 10px;
     font-size: 1.2em;
 }
+.active {
+    font-weight: 600;
+}
+nav ul a {
+    text-decoration: none;
+    color: black;
+}
+nav ul a:hover {
+    color: #b1663c;
+}
+
+nav img {
+    width: 22px;
+}
 
 li:hover {
     color: #b1663c;
@@ -202,8 +223,10 @@ li:hover {
 }
 #portfolio h2 {
     text-align: center;
-    margin-bottom: 1em;
 }
+
+/* css filters  */
+
 #myFilters {
     display: flex;
     justify-content: center;
@@ -234,7 +257,47 @@ li:hover {
     cursor: default;
 }
 
-/* css filtres ici  */
+.button-modifier {
+    display: flex;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.section-modifier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* css page login  */
+
+#login h2 {
+    text-align: center;
+    margin-top: 150px;
+}
+
+#login a {
+    text-decoration-line: underline;
+    color: #3d3d3d;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+}
 
 .gallery {
     width: 100%;
@@ -247,32 +310,46 @@ li:hover {
 .gallery img {
     width: 100%;
 }
-#contact {
+#contact,
+#login {
     width: 50%;
     margin: auto;
 }
-#contact > * {
+#contact > *,
+#login > * {
     text-align: center;
 }
-#contact h2 {
+#contact h2,
+#login h2 {
     margin-bottom: 20px;
 }
-#contact form {
+#contact form,
+#login form {
     text-align: left;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
 }
 
-#contact input {
+#contact input,
+#login input {
     height: 50px;
     font-size: 1.2em;
     border: none;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-#contact label {
+#contact label,
+#login label {
     margin: 2em 0 1em 0;
 }
+
+#login-status {
+    margin-top: 10px;
+    color: #b91c1c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 #contact textarea {
     border: none;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
@@ -287,10 +364,20 @@ input[type="submit"] {
     width: 180px;
     text-align: center;
     border-radius: 60px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #0e2f28;
 }
 
 footer nav ul {
     display: flex;
     justify-content: flex-end;
     margin: 2em;
+}
+
+footer {
+    background-color: white;
+    width: 100%;
+    flex-shrink: 0;
 }
