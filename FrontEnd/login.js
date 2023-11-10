@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => response.json())
             .then((result) => {
+                console.log("result.token =>", result.token);
                 if (result.userId && result.token) {
                     window.location.href = "index.html";
                 } else {

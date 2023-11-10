@@ -90,7 +90,7 @@ fetch(apiUrlWorks)
     })
     .then((data) => {
         // Utilisez les données récupérées (stockées dans la variable "data")
-        const section = document.getElementById("portfolio");
+
         const portfolioGallery = document.querySelector("#portfolio .gallery");
 
         data.forEach((item) => {
@@ -101,6 +101,7 @@ fetch(apiUrlWorks)
             // image.src = item.imageUrl;
             image.setAttribute("alt", item.title);
             figure.setAttribute("data-item-categoryId", item.categoryId);
+            figure.setAttribute("data-item-id", item.id);
             const figcaption = document.createElement("figcaption");
             figcaption.textContent = item.title;
             figure.appendChild(image);

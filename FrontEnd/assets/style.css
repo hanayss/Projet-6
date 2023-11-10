@@ -257,7 +257,7 @@ li:hover {
     cursor: default;
 }
 
-.button-modifier {
+#open-modal {
     display: flex;
     gap: 10px;
     background-color: transparent;
@@ -270,6 +270,93 @@ li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 31px;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.modal-content {
+    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    width: 630px;
+    height: 688px;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+#close-modal {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#modal-work {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 6px;
+    row-gap: 24px;
+    margin-left: 105px;
+    margin-right: 105px;
+    margin-top: 46px;
+}
+
+.line-modal {
+    width: 420px;
+    height: 1px;
+    background-color: #b3b3b3;
+    margin: auto;
+    margin-top: 67px;
+}
+
+#modal-work img.image-galery {
+    width: 79px;
+}
+#modal-work figure {
+    position: relative;
+}
+
+#button-delete {
+    background-color: black;
+    width: 17px;
+    height: 17px;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 6%;
+    left: 73%;
+    cursor: pointer;
+}
+
+#delete-icon {
+    width: 9px;
+    height: 11px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 26px;
+    padding-top: 60px;
 }
 
 /* css page login  */
@@ -316,7 +403,8 @@ li:hover {
     margin: auto;
 }
 #contact > *,
-#login > * {
+#login > *,
+#modal > * {
     text-align: center;
 }
 #contact h2,
@@ -332,11 +420,16 @@ li:hover {
 }
 
 #contact input,
-#login input {
+#login input,
+#modal input {
     height: 50px;
     font-size: 1.2em;
     border: none;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+#modal input {
+    width: 237px;
 }
 #contact label,
 #login label {
