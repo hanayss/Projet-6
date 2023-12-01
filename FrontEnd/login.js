@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById("password");
     const loginStatus = document.getElementById("login-status");
 
-    console.log("loginForm =>", loginForm);
+    //console.log("loginForm =>", loginForm);
     loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             password: password,
         };
 
-        console.log(data);
+        //console.log(data);
 
         fetch(apiUrlLogin, {
             method: "POST",
@@ -29,8 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => response.json())
             .then((result) => {
-                console.log("result.token =>", result.token);
+                //console.log("result.token =>", result.token);
                 if (result.userId && result.token) {
+                    const authToken = result.token;
+                    localStorage.setItem("authToken", authToken);
                     window.location.href = "index.html";
                 } else {
                     loginStatus.textContent =

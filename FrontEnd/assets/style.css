@@ -144,7 +144,9 @@ main {
 header {
     display: flex;
     justify-content: space-between;
-    margin: 50px 150px;
+    width: 1140px;
+    margin: auto;
+    margin-top: 38px;
 }
 section {
     margin: 50px 0;
@@ -201,14 +203,19 @@ li:hover {
 #introduction {
     display: flex;
     align-items: center;
+    width: 1000px;
+    margin: auto;
+    margin-top: 92px;
+    gap: 72px;
 }
+
 #introduction figure {
     flex: 1;
 }
 #introduction img {
     display: block;
     margin: auto;
-    width: 80%;
+    width: 474px;
 }
 
 #introduction article {
@@ -242,6 +249,7 @@ li:hover {
     color: #1d6154;
     font-size: 16px;
     font-weight: 700;
+    padding: 0 15px;
 }
 
 #myFilters button:hover {
@@ -271,6 +279,7 @@ li:hover {
     justify-content: center;
     align-items: center;
     gap: 31px;
+    margin-top: 139px;
 }
 
 #modal {
@@ -282,6 +291,10 @@ li:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 999;
+}
+
+#modal section {
+    margin: 0;
 }
 
 .modal-content {
@@ -326,14 +339,129 @@ li:hover {
     margin-top: 67px;
 }
 
+#icon-return {
+    position: absolute;
+    top: 26px;
+    left: 30px;
+    cursor: pointer;
+}
+
+.section-creation form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.section-creation {
+    display: none;
+}
+
+.form-add-photo,
+#preview-image {
+    background-color: #e8f1f6;
+    width: 420px;
+    height: 169px;
+    border-radius: 3px;
+    margin-top: 36px;
+}
+
+#preview-image {
+    display: none;
+}
+
+#preview-image img {
+    max-height: 169px;
+}
+
+#title,
+#category {
+    width: 420px;
+    height: 51px;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+}
+
+#category {
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+#error-message-form-add-image {
+    margin-top: 10px;
+    color: #b91c1c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#image-chevron {
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: -1;
+}
+.input-category-and-chevron {
+    position: relative;
+}
+
+#form-add-photo label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-family: Work Sans;
+    color: #3d3d3d;
+}
+
+.formats-add-photos {
+    color: #444444;
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+#form-add-photo label[for="category"] {
+    margin-top: 21px;
+    margin-right: 355px;
+}
+#form-add-photo label[for="title"] {
+    margin-top: 30px;
+    margin-right: 390px;
+}
+
+.form-add-photo #image-photo {
+    flex-shrink: 0;
+    margin-top: 13px;
+    margin-bottom: 6px;
+}
+
 #modal-work img.image-galery {
     width: 79px;
 }
 #modal-work figure {
     position: relative;
 }
+#add-file {
+    display: none;
+}
 
-#button-delete {
+.button-add-photo {
+    border-radius: 50px;
+    width: 173px;
+    height: 36px;
+    background-color: #cbd6dc;
+    border: none;
+    display: block;
+    margin: auto;
+    font-size: 14px;
+    font-family: Work Sans;
+    color: #306685;
+    cursor: pointer;
+}
+
+.button-delete {
     background-color: black;
     width: 17px;
     height: 17px;
@@ -348,7 +476,7 @@ li:hover {
     cursor: pointer;
 }
 
-#delete-icon {
+.delete-icon {
     width: 9px;
     height: 11px;
 }
@@ -387,15 +515,16 @@ h3 {
 }
 
 .gallery {
-    width: 100%;
+    width: 1000px;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
+    grid-column-gap: 5px;
     grid-row-gap: 20px;
 }
 
 .gallery img {
-    width: 100%;
+    width: 310px;
 }
 #contact,
 #login {
@@ -428,7 +557,7 @@ h3 {
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-#modal input {
+#modal input[type="submit"] {
     width: 237px;
 }
 #contact label,
@@ -461,6 +590,9 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     background-color: #0e2f28;
+}
+input[type="submit"]:disabled {
+    background-color: #a7a7a7;
 }
 
 footer nav ul {

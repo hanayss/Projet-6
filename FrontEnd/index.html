@@ -14,15 +14,74 @@
         <link rel="stylesheet" href="./assets/style.css" />
         <script src="script.js"></script>
         <script src="modal.js"></script>
+        <script src="addWorks.js"></script>
+        <script src="functions.js"></script>
     </head>
     <body>
         <div id="modal">
             <div class="modal-content">
                 <span id="close-modal"> &times; </span>
-                <h3>Galerie photo</h3>
-                <div id="modal-work"></div>
-                <div class="line-modal"></div>
-                <input type="submit" value="Ajouter une photo" />
+                <section class="section-delete">
+                    <h3>Galerie photo</h3>
+                    <div id="modal-work"></div>
+                    <div class="line-modal"></div>
+                    <input
+                        id="button-add-photo"
+                        type="submit"
+                        value="Ajouter une photo"
+                    />
+                </section>
+                <section class="section-creation">
+                    <span id="icon-return">
+                        <img src="assets/icons/icon-return.svg" alt="return" />
+                    </span>
+                    <h3>Ajout photo</h3>
+
+                    <form id="form-add-photo">
+                        <div id="preview-image"></div>
+                        <div class="form-add-photo">
+                            <img
+                                id="image-photo"
+                                src="assets/icons/img-ajout-image.svg"
+                                alt="image ajout image"
+                            />
+                            <input
+                                type="file"
+                                id="add-file"
+                                accept=".jpg, .png"
+                                size="4194304"
+                            />
+                            <button type="button" class="button-add-photo">
+                                + Ajouter photo
+                            </button>
+                            <p class="formats-add-photos">jpg, png : 4mo max</p>
+                        </div>
+                        <label for="title">Titre</label>
+                        <input type="text" name="title" id="title" />
+                        <label for="category">Catégorie</label>
+                        <div class="input-category-and-chevron">
+                            <img
+                                id="image-chevron"
+                                src="assets/icons/icon-chevron-down.svg"
+                                alt="chevron ouvrant"
+                            />
+                            <select name="category" id="category">
+                                <option
+                                    value=""
+                                    disabled
+                                    selected
+                                    hidden
+                                ></option>
+                                <option value="1">Objets</option>
+                                <option value="2">Appartements</option>
+                                <option value="3">Hotels & restaurants</option>
+                            </select>
+                        </div>
+                        <p id="error-message-form-add-image"></p>
+                        <div class="line-modal"></div>
+                        <input type="submit" value="Valider" disabled />
+                    </form>
+                </section>
             </div>
         </div>
         <header>
