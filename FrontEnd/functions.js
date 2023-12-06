@@ -13,13 +13,14 @@ function addImagePortfolio(work) {
     portfolioGallery.appendChild(figure);
 }
 
-function deleteImageGalery(deleteWork) {
+function deleteImageGalery(work) {
     const modal = document.querySelector("#modal-work");
     const figure = document.createElement("figure");
     const image = document.createElement("img");
-    image.setAttribute("src", deleteWork.imageUrl);
+    image.setAttribute("src", work.imageUrl);
     image.setAttribute("class", "image-galery");
-    figure.setAttribute("data-item-categoryId", deleteWork.categoryId);
+    image.setAttribute("alt", work.title);
+    figure.setAttribute("data-item-categoryId", work.categoryId);
     figure.appendChild(image);
     modal.appendChild(figure);
     const buttonDelete = document.createElement("button");
@@ -34,11 +35,10 @@ function deleteImageGalery(deleteWork) {
     buttonDelete.addEventListener("click", function () {
         figure.remove();
         document
-            .querySelector("figure[data-item-id='" + deleteWork.id + "']")
+            .querySelector("figure[data-item-id='" + work.id + "']")
             .remove();
 
-        const apiUrlWorksDelete =
-            "http://localhost:5678/api/works/" + deleteWork.id;
+        const apiUrlWorksDelete = "http://localhost:5678/api/works/" + work.id;
         const authToken = localStorage.getItem("authToken");
         fetch(apiUrlWorksDelete, {
             method: "DELETE",

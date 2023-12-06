@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const apiUrlLogin = "http://localhost:5678/api/users/login";
 
-    const loginForm = document.getElementById("login");
+    const loginForm = document.getElementById("login-form");
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const loginStatus = document.getElementById("login-status");
 
-    //console.log("loginForm =>", loginForm);
     loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -17,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
             email: email,
             password: password,
         };
-
-        //console.log(data);
 
         fetch(apiUrlLogin, {
             method: "POST",

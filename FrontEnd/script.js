@@ -2,11 +2,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const apiUrlWorks = "http://localhost:5678/api/works";
     const apiUrlCategories = "http://localhost:5678/api/categories";
 
+    const hideBannerEdition = document.querySelector(".edition-banner");
+    const loginNav = document.querySelector("nav li.login");
+    const logoutNav = document.querySelector("nav li.logout");
     const hideModifier = document.getElementById("open-modal");
     const authToken = localStorage.getItem("authToken");
     if (authToken) {
+        loginNav.style.display = "none";
+        logoutNav.style.display = "flex";
+        hideBannerEdition.style.display = "flex";
         hideModifier.style.display = "flex";
+
+        logoutNav.addEventListener("click", function () {
+            localStorage.removeItem("authToken");
+            loginNav.style.display = "flex";
+            logoutNav.style.display = "none";
+            hideBannerEdition.style.display = "none";
+            hideModifier.style.display = "none";
+        });
     } else {
+        loginNav.style.display = "flex";
+        logoutNav.style.display = "none";
+        hideBannerEdition.style.display = "none";
         hideModifier.style.display = "none";
     }
 

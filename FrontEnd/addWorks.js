@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sendForm(event) {
-        console.log("event =>", event);
         event.preventDefault();
         const formData = new FormData();
         formData.append("image", inputFile.files[0]);
