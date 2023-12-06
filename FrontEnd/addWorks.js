@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             reader.readAsDataURL(inputFile.files[0]);
         } else {
-            console.log("fichier none");
         }
     }
     function previewImage(imageUrl) {
@@ -37,9 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkInputs() {
         const inputTitleValue = inputTitle.value.trim();
-        console.log("inputTitleValue =>", inputTitleValue);
         const selectCategoriesValue = selectCategories.value.trim();
-        console.log("selectCategoriesValue =>", selectCategoriesValue);
         activateButtonValidate.disabled =
             inputTitleValue === "" ||
             selectCategoriesValue === "" ||
@@ -65,11 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!response.ok || response.status !== 201) {
                     throw new Error("La requête a échoué");
                 }
-                console.log("response =>", response);
                 return response.json(); // Parse la réponse en JSON
             })
             .then((data) => {
-                console.log("data =>", data);
                 addImagePortfolio(data);
                 deleteImageGalery(data);
                 selectCategories.value = "";
@@ -85,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch((err) => {
                 errorMessage.textContent = "Une erreur est survenue, réessayez";
-                console.log("err =>", err);
             });
     }
 });

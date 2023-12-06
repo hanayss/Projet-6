@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then((response) => response.json())
             .then((result) => {
-                //console.log("result.token =>", result.token);
                 if (result.userId && result.token) {
                     const authToken = result.token;
                     localStorage.setItem("authToken", authToken);
