@@ -9,11 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     closeModal.addEventListener("click", () => {
         modal.style.display = "none";
+        clearInputAddWork();
     });
     modal.addEventListener("click", (event) => {
         const idElementClique = event.target.id;
         if (idElementClique === "modal") {
             modal.style.display = "none";
+            clearInputAddWork();
         }
     });
     document
@@ -30,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     document.querySelector("#icon-return").addEventListener("click", () => {
+        clearInputAddWork();
         document.querySelector(".section-delete").style.display = "block";
         document.querySelector(".section-creation").style.display = "none";
     });

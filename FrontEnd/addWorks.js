@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     inputFile.addEventListener("change", checkFile);
     form.addEventListener("input", checkInputs);
     form.addEventListener("submit", sendForm);
+
     function checkFile() {
         if (inputFile.files && inputFile.files[0]) {
             const reader = new FileReader();
@@ -25,15 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
         }
     }
+
     function previewImage(imageUrl) {
         const sectionPreviewImg = document.getElementById("preview-image");
         const img = document.createElement("img");
         img.src = imageUrl;
-        sectionPreviewImg.appendChild(img);
-        document.getElementById("preview-image").style.display = "block";
+        sectionPreviewImg.replaceChildren(img);
+        document.getElementById("preview-image").style.display = "flex";
         document.querySelector(".form-add-photo").style.display = "none";
     }
-
     function checkInputs() {
         const inputTitleValue = inputTitle.value.trim();
         const selectCategoriesValue = selectCategories.value.trim();
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 deleteImageGalery(data);
                 selectCategories.value = "";
                 inputTitle.value = "";
-                inputFile.files.length = 0;
+                inputFile.value = "";
                 document.getElementById("preview-image").style.display = "none";
                 document.querySelector(".form-add-photo").style.display =
                     "block";

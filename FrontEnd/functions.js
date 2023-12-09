@@ -52,3 +52,13 @@ function deleteImageGalery(work) {
         });
     });
 }
+function clearInputAddWork() {
+    const inputFile = document.getElementById("add-file");
+    const inputTitle = document.getElementById("title");
+    const selectCategories = document.getElementById("category");
+    selectCategories.value = "";
+    inputTitle.value = "";
+    inputFile.value = "";
+    document.getElementById("preview-image").style.display = "none";
+    document.querySelector(".form-add-photo").style.display = "block";
+}

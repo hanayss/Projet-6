@@ -386,10 +386,14 @@ li:hover {
 
 #preview-image {
     display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 #preview-image img {
     max-height: 169px;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 #title,

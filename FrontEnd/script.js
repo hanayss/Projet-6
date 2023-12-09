@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
         hideModifier.style.display = "flex";
 
         logoutNav.addEventListener("click", function () {
+            const sectionFilters = document.getElementById("myFilters");
+            sectionFilters.style.display = "flex";
             localStorage.removeItem("authToken");
             loginNav.style.display = "flex";
             logoutNav.style.display = "none";
@@ -37,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((dataCategories) => {
             const sectionFilters = document.createElement("section");
+            if (authToken) {
+                sectionFilters.style.display = "none";
+            }
             sectionFilters.setAttribute("id", "myFilters");
             const buttonAll = document.createElement("button");
             buttonAll.textContent = "Tous";
